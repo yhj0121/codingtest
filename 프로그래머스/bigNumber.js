@@ -9,16 +9,15 @@ function solution(number, k) {
     const tempNum = number[i];
 
     //값을 비교하는거 3 1에서 4가 들어간경우 4 1 비교 1 pop 그다음 3하고 비교 3 빼기
-    while (k > 0 && storage[storage.length - 1] < tempNum) {
+    while ( k> 0 && storage[storage.length - 1] < tempNum) {
       storage.pop();
       k--;
     }
     storage.push(tempNum); //while문 만족하는 값 넣어주기
   }
-  //   storage.splice(number.length - k, k); 이거 이유 설명
+    storage.splice(number.length - k, k); //똑같은값일때 
 
   return storage.join("");
 }
-console.log(solution("1924", 2));
 
-// console.log(solution("777777", 2));
+console.log(solution("777777", 2));
